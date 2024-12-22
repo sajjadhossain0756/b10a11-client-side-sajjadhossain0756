@@ -34,14 +34,23 @@ const Navbar = () => {
       </div>
       <div className='flex-none'>
         <ul className='menu menu-horizontal px-1 items-center'>
-          <input onClick={handleThemeColor} type="checkbox" value="synthwave" className="toggle theme-controller" />
-          <li>
+          
+          <li className='hidden lg:block'>
             <Link to='/'>Home</Link>
           </li>
-          <li>
-            <Link to='/jobs'>All Jobs</Link>
+          <li className='hidden lg:block'>
+            <Link to='/allItems'>All Items</Link>
           </li>
-
+          <li className='hidden lg:block'>
+            <Link to='/addItem'>Add Items</Link>
+          </li>
+          <li className='hidden lg:block'>
+            <Link to='/myItems'>My Items</Link>
+          </li>
+          <li className='hidden lg:block'>
+            <Link to='/recoverItems'>Recover Items</Link>
+          </li>
+          <input onClick={handleThemeColor} type="checkbox" value="synthwave" className="toggle theme-controller" />
           {!user && (
             <li>
               <Link to='/login'>Login</Link>
@@ -69,18 +78,18 @@ const Navbar = () => {
               className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
             >
               <li>
-                <Link to='/add-job' className='justify-between'>
-                  Add Job
+                <Link to='/addItem' className='justify-between'>
+                  Add Items
                 </Link>
               </li>
               <li>
-                <Link to='/my-posted-jobs'>My Posted Jobs</Link>
+                <Link to='/myItems'>My Items</Link>
               </li>
               <li>
-                <Link to='/my-bids'>My Bids</Link>
+                <Link to='/allItems'>All Items</Link>
               </li>
               <li>
-                <Link to='/bid-requests'>Bid Requests</Link>
+                <Link to='/recoverItems'>Recover Items</Link>
               </li>
               <li className='mt-2'>
                 <button
