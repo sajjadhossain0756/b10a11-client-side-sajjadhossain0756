@@ -1,12 +1,13 @@
 import { Link, useNavigate } from 'react-router-dom'
-import bgImg from '../../assets/images/register.jpg'
-import logo from '../../assets/images/logo.png'
+import bgImg from '../../assets/images/register.json'
+import logo from '../../assets/images/nav_logo.png'
 import { useContext } from 'react'
 import { AuthContext } from '../../providers/AuthProvider'
 import toast from 'react-hot-toast'
 import Swal from 'sweetalert2'
 import { updateProfile } from 'firebase/auth'
 import auth from '../../firebase/firebase.config'
+import Lottie from 'lottie-react'
 
 const Registration = () => {
   const navigate = useNavigate()
@@ -68,19 +69,19 @@ const Registration = () => {
 
   return (
     <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
-      <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
+      <div className='flex w-full items-center max-w-sm mx-auto overflow-hidden bg-gray-100 border-2 dark:border-purple-300 dark:bg-gray-700  rounded-lg shadow-lg  lg:max-w-4xl '>
         <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
           <div className='flex justify-center mx-auto'>
             <img className='w-auto h-7 sm:h-8' src={logo} alt='' />
           </div>
 
-          <p className='mt-3 text-xl text-center text-gray-600 '>
+          <p className='mt-3 text-xl text-center dark:text-white text-gray-600 '>
             Get Your Free Account Now.
           </p>
 
           <div
             onClick={handleGoogleSignIn}
-            className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '
+            className='flex cursor-pointer items-center dark:hover:bg-gray-600 justify-center mt-4 dark:text-white text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '
           >
             <div className='px-4 py-2'>
               <svg className='w-6 h-6' viewBox='0 0 40 40'>
@@ -111,7 +112,7 @@ const Registration = () => {
           <div className='flex items-center justify-between mt-4'>
             <span className='w-1/5 border-b  lg:w-1/4'></span>
 
-            <div className='text-xs text-center text-gray-500 uppercase  hover:underline'>
+            <div className='text-xs text-center dark:text-gray-300 text-gray-500 uppercase  hover:underline'>
               or Registration with email
             </div>
 
@@ -120,7 +121,7 @@ const Registration = () => {
           <form onSubmit={handleSignUp}>
             <div className='mt-4'>
               <label
-                className='block mb-2 text-sm font-medium text-gray-600 '
+                className='block mb-2 text-sm font-medium dark:text-white text-gray-600 '
                 htmlFor='name'
               >
                 Username
@@ -135,7 +136,7 @@ const Registration = () => {
             </div>
             <div className='mt-4'>
               <label
-                className='block mb-2 text-sm font-medium text-gray-600 '
+                className='block mb-2 text-sm font-medium dark:text-white text-gray-600 '
                 htmlFor='photo'
               >
                 Photo URL
@@ -150,7 +151,7 @@ const Registration = () => {
             </div>
             <div className='mt-4'>
               <label
-                className='block mb-2 text-sm font-medium text-gray-600 '
+                className='block mb-2 text-sm font-medium dark:text-white text-gray-600 '
                 htmlFor='LoggingEmailAddress'
               >
                 Email Address
@@ -167,7 +168,7 @@ const Registration = () => {
             <div className='mt-4'>
               <div className='flex justify-between'>
                 <label
-                  className='block mb-2 text-sm font-medium text-gray-600 '
+                  className='block mb-2 text-sm font-medium dark:text-white text-gray-600 '
                   htmlFor='loggingPassword'
                 >
                   Password
@@ -197,7 +198,7 @@ const Registration = () => {
 
             <Link
               to='/login'
-              className='text-xs text-gray-500 uppercase  hover:underline'
+              className='text-xs dark:text-gray-300 text-gray-500 uppercase  hover:underline'
             >
               or sign in
             </Link>
@@ -206,11 +207,10 @@ const Registration = () => {
           </div>
         </div>
         <div
-          className='hidden bg-cover bg-center lg:block lg:w-1/2'
-          style={{
-            backgroundImage: `url(${bgImg})`,
-          }}
-        ></div>
+          className='hidden lg:block lg:w-1/2'
+        >
+          <Lottie animationData={bgImg}></Lottie>
+        </div>
       </div>
     </div>
   )

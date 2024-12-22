@@ -4,8 +4,14 @@ import { AuthContext } from '../providers/AuthProvider'
 import { Link } from 'react-router-dom'
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext)
+
+  const handleThemeColor = () => {
+    const htmlTag = document.getElementById('htmlTag');
+    htmlTag.classList.toggle('dark')
+  }
+
   return (
-    <div className='navbar bg-purple-400 shadow-sm container px-4 mx-auto'>
+    <div className='navbar bg-purple-400 dark:bg-purple-600 shadow-sm px-10 mx-auto'>
       <div className='flex-1'>
         <Link to='/' className='flex gap-2 items-center'>
           <img className='w-auto h-7' src={logo} alt='' />
@@ -13,7 +19,8 @@ const Navbar = () => {
         </Link>
       </div>
       <div className='flex-none'>
-        <ul className='menu menu-horizontal px-1'>
+        <ul className='menu menu-horizontal px-1 items-center'>
+          <input onClick={handleThemeColor} type="checkbox" value="synthwave" className="toggle theme-controller" />
           <li>
             <Link to='/'>Home</Link>
           </li>
