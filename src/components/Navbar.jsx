@@ -1,13 +1,27 @@
 import { useContext } from 'react'
 import logo from '../assets/images/nav_logo.png'
 import { AuthContext } from '../providers/AuthProvider'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext)
+
+  const navigate = useNavigate()
 
   const handleThemeColor = () => {
     const htmlTag = document.getElementById('htmlTag');
     htmlTag.classList.toggle('dark')
+  }
+
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire('sign out successfully')
+        navigate('/login');
+      })
+      .catch(error => {
+        Swal.fire('Error', error.message)
+      })
   }
 
   return (
@@ -70,7 +84,7 @@ const Navbar = () => {
               </li>
               <li className='mt-2'>
                 <button
-                  onClick={logOut}
+                  onClick={handleSignOut}
                   className='bg-gray-200 block text-center'
                 >
                   Logout

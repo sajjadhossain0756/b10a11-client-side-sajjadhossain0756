@@ -1,9 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom'
-import bgImg from '../../assets/images/register.json'
+import registerLottie from '../../assets/images/lottie/register.json'
 import logo from '../../assets/images/nav_logo.png'
 import { useContext } from 'react'
 import { AuthContext } from '../../providers/AuthProvider'
-import toast from 'react-hot-toast'
 import Swal from 'sweetalert2'
 import { updateProfile } from 'firebase/auth'
 import auth from '../../firebase/firebase.config'
@@ -63,13 +62,14 @@ const Registration = () => {
         navigate(from)
       })
       .catch(error => {
-        console.log('Error', error.message)
+        Swal.fire('Error', error.message)
       })
   }
 
   return (
     <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
-      <div className='flex w-full items-center max-w-sm mx-auto overflow-hidden bg-gray-100 border-2 dark:border-purple-300 dark:bg-gray-700  rounded-lg shadow-lg  lg:max-w-4xl '>
+      <div className='flex w-full items-center max-w-sm mx-auto overflow-hidden
+       bg-gray-100 border-2 dark:border-purple-300 dark:bg-gray-700  rounded-lg shadow-lg  lg:max-w-4xl '>
         <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
           <div className='flex justify-center mx-auto'>
             <img className='w-auto h-7 sm:h-8' src={logo} alt='' />
@@ -194,22 +194,22 @@ const Registration = () => {
           </form>
 
           <div className='flex items-center justify-between mt-4'>
-            <span className='w-1/5 border-b  md:w-1/4'></span>
+            <span className='w-1/5 border-b '></span>
 
             <Link
               to='/login'
               className='text-xs dark:text-gray-300 text-gray-500 uppercase  hover:underline'
             >
-              or sign in
+              If You have Account, sign in
             </Link>
 
-            <span className='w-1/5 border-b  md:w-1/4'></span>
+            <span className='w-1/5 border-b '></span>
           </div>
         </div>
         <div
           className='hidden lg:block lg:w-1/2'
         >
-          <Lottie animationData={bgImg}></Lottie>
+          <Lottie animationData={registerLottie}></Lottie>
         </div>
       </div>
     </div>
