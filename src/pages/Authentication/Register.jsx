@@ -14,7 +14,7 @@ const Registration = () => {
   const { signInWithGoogle, createUser } =
     useContext(AuthContext)
 
-  const handleSignUp = async e => {
+  const handleSignUp = (e) => {
     e.preventDefault()
     const form = e.target
     const email = form.email.value
@@ -55,16 +55,16 @@ const Registration = () => {
   }
 
   // Google Signin
-  const handleGoogleSignIn = async () => {
-    try {
-      await signInWithGoogle()
-
-      toast.success('Signin Successful')
-      navigate('/')
-    } catch (err) {
-      console.log(err)
-      toast.error(err?.message)
-    }
+  const handleGoogleSignIn = () => {
+    signInWithGoogle( )
+      .then(result => {
+        console.log(result.user)
+        Swal.fire('successfully login')
+        navigate(from)
+      })
+      .catch(error => {
+        console.log('Error', error.message)
+      })
   }
 
   return (
