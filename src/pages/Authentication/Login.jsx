@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../providers/AuthProvider'
 import Swal from 'sweetalert2'
 import toast from 'react-hot-toast'
+import { Helmet } from 'react-helmet'
 
 const Login = () => {
   const { signInWithGoogle,signIn } = useContext(AuthContext)
@@ -45,6 +46,7 @@ const Login = () => {
   }
   return (
     <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12 pb-10'>
+      <Helmet><title>Lost & Found/Login Page</title></Helmet>
       <div className='flex w-full max-w-sm mx-auto overflow-hidden lg:flex-row-reverse
        bg-gray-100 border-2 dark:border-purple-300 dark:bg-gray-700 rounded-lg shadow-lg  lg:max-w-4xl '>
         <div
