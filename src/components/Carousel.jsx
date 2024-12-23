@@ -10,15 +10,15 @@ import 'swiper/css/navigation'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 import Slide from './Slide'
 
-import bgimg1 from '../assets/images/carousel1.jpg'
-import bgimg2 from '../assets/images/carousel2.jpg'
-import bgimg3 from '../assets/images/carousel3.jpg'
+import bgimg1 from '../assets/images/slide1.jpg'
+import bgimg2 from '../assets/images/slide2.jpg'
+import bgimg3 from '../assets/images/slide3.jpg'
 
 export default function Carousel() {
   return (
-    <div className='container px-6 py-10 mx-auto'>
+    <div className=' px-10 py-2 mx-auto '>
       <Swiper
-        spaceBetween={30}
+        
         centeredSlides={true}
         loop={true}
         autoplay={{
@@ -29,25 +29,32 @@ export default function Carousel() {
           clickable: true,
         }}
         navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[ Autoplay, Pagination, Navigation]} 
+        
         className='mySwiper'
       >
         <SwiperSlide>
           <Slide
             image={bgimg1}
-            text='Get Your Web Development Projects Done in minutes'
+            title='Lost? Found? Let’s Fix That!'
+            text='Our mission is to bring lost items back to their rightful owners. Browse listings, post found objects, 
+            and make connections effortlessly. Together, we can close the gap between lost and found'
           />
         </SwiperSlide>
         <SwiperSlide>
           <Slide
             image={bgimg2}
-            text='Get Your Graphics Design Projects Done in minutes'
+            title='Reunite with What Matters Most'
+            text="Discover a seamless way to report, search, and recover lost items. Whether you've misplaced 
+            something or found an item, our platform makes reuniting people with their belongings easy"
           />
         </SwiperSlide>
         <SwiperSlide>
           <Slide
             image={bgimg3}
-            text='Start Your Digital Marketing Campaigns up n running'
+            title='Lost & Found Made Simple'
+            text='Your trusted platform for recovering what’s lost and sharing what’s found.Join a community 
+            where lost items find their way home. Search, post, and reconnect effortlessly.'
           />
         </SwiperSlide>
       </Swiper>
