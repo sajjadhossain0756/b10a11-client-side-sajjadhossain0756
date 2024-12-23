@@ -3,7 +3,7 @@ import logo from '../assets/images/footer_logo.png'
 const Footer = () => {
   return (
     <div>
-      <footer className="footer justify-between px-16 bg-base-300 dark:bg-gray-800 dark:text-white text-base-content p-10">
+      <footer className="footer justify-between px-16 bg-gray-700 dark:bg-gray-800 text-white p-10">
         <nav>
            <figure>
                <img className='ml-2' src={logo} alt="" />
@@ -66,7 +66,7 @@ const Footer = () => {
         </nav>
       </footer>
       <hr/>
-      <footer className="footer footer-center bg-base-300 dark:bg-gray-800 dark:text-white text-base-content p-4">
+      <footer className="footer footer-center bg-gray-700 dark:bg-gray-800 text-white p-4">
         <aside>
           <p>Copyright © {new Date().getFullYear()} - All right reserved by Lost & Found</p>
         </aside>
