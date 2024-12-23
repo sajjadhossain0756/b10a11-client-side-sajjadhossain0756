@@ -8,10 +8,12 @@ import AddItem from '../pages/AddItem'
 import RecoverItems from '../pages/RecoverItems'
 import MyItems from '../pages/MyItems'
 import PrivateRoute from './PrivateRoute'
+import Error from '../pages/Error'
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Main />,
+    errorElement: <Error />,
     children: [
       {
         index: true,

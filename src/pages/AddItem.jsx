@@ -26,7 +26,8 @@ const AddItem = () => {
          }
        })
     }catch(err){
-
+        console.log('Error',err.message)
+        toast.error('Error',err.message)
     }
 
   }
