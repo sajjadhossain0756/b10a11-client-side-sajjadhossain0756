@@ -9,6 +9,7 @@ import RecoverItems from '../pages/RecoverItems'
 import MyItems from '../pages/MyItems'
 import PrivateRoute from './PrivateRoute'
 import Error from '../pages/Error'
+import Details from '../pages/Details'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
       {
         path: '/myItems',
         element: <PrivateRoute><MyItems /></PrivateRoute>,
+      },
+      {
+        path: '/details/:id',
+        element: <PrivateRoute><Details /></PrivateRoute>,
+        loader: ({params}) => fetch(`${import.meta.env.VITE_SERVER_URL}/allItems/${params.id}`)
       },
       {
         path: '/registration',

@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const ItemCard = ({ item }) => {
-    const {title,type,category,date,image,description,displayName,userEmail} = item || {}
+    const {_id,title,type,category,date,image,description,displayName,userEmail} = item || {}
     return (
         <div>
             <div className="card bg-purple-300 dark:bg-gray-700 dark:text-white border-2 dark:border-purple-400 shadow-lg">
@@ -20,7 +21,7 @@ const ItemCard = ({ item }) => {
                     </div>
                     <p className='font-bold'>Date: {date}</p>
                     <div className="card-actions pt-3">
-                        <button className="btn bg-green-300 hover:bg-orange-300">View Details</button>
+                        <Link to={`/details/${_id}`}><button className="btn bg-green-300 hover:bg-orange-300">View Details</button></Link>
                     </div>
                 </div>
             </div>
