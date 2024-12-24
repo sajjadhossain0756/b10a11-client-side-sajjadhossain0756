@@ -1,5 +1,5 @@
 
-Welcome to Lost And Found Project
+   ------------------   Welcome to Lost And Found Project  ------------------------------
 
 #############   Project Name: Lost And Found Project  ################
 

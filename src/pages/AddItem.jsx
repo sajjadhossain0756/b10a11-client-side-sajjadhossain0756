@@ -66,7 +66,7 @@ const AddItem = () => {
             <div className='flex flex-col w-full'>
               <label htmlFor="name" className='font-semibold text-xl py-3'>Lost Or Found Date</label>
               <DatePicker
-                name='applicationDeadline'
+                name='date'
                 className='border bg-white text-gray-700 p-2 w-full rounded-md'
                 selected={startDate}
                 onChange={date => setStartDate(date)}
