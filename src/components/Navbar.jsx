@@ -25,7 +25,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='navbar bg-purple-400 dark:bg-purple-600 shadow-sm px-10 mx-auto'>
+    <div className='navbar bg-purple-400 dark:bg-purple-600 shadow-sm px-10 mx-auto sticky top-0 z-10 backdrop-blur-md bg-opacity-50'>
       <div className='flex-1'>
         <Link to='/' className='flex gap-2 items-center'>
           <img className='w-auto h-7' src={logo} alt='' />

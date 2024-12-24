@@ -4,7 +4,7 @@ const ItemCard = ({ item }) => {
     const {title,type,category,date,image,description,displayName,userEmail} = item || {}
     return (
         <div>
-            <div className="card bg-purple-300 dark:bg-gray-700 dark:text-white border-2 shadow-lg">
+            <div className="card bg-purple-300 dark:bg-gray-700 dark:text-white border-2 dark:border-purple-400 shadow-lg">
                 <figure className="p-4">
                     <img
                         src={image}
@@ -14,6 +14,11 @@ const ItemCard = ({ item }) => {
                 <div className="p-4 space-y-2">
                     <h2 className="card-title">Title: {title}</h2>
                     <p>Description: {description.substring(1,100)}....</p>
+                    <div className='flex gap-20'>
+                        <p className='font-bold'>Type: {type}</p>
+                        <p className='font-bold'>Category: {category}</p>
+                    </div>
+                    <p className='font-bold'>Date: {date}</p>
                     <div className="card-actions pt-3">
                         <button className="btn bg-green-300 hover:bg-orange-300">View Details</button>
                     </div>

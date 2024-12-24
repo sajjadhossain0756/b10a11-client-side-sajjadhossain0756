@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import ItemCard from '../components/ItemCard'
+import Swal from 'sweetalert2'
 
 const AllItems = () => {
   const [items,setItems] = useState([])
@@ -13,6 +14,7 @@ const AllItems = () => {
             setItems(res.data)
          })
       }catch(err){
+        Swal.fire('Error',err.message)
 
       }
   },[])
