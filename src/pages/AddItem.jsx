@@ -15,6 +15,7 @@ const AddItem = () => {
     const formData = new FormData(e.target);
     const initialData = Object.fromEntries(formData.entries());
     console.log(initialData)
+    initialData.status = "pending";
   
     try{
        axios.post(`${import.meta.env.VITE_SERVER_URL}/allItems`,initialData)

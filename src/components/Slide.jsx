@@ -11,11 +11,11 @@ const Slide = ({ image, text,title }) => {
       }}
     >
       <div className='flex items-center justify-center w-full h-full bg-gray-900/80 rounded'>
-        <div className='text-center flex flex-col justify-center items-center gap-3'>
+        <div className='text-center flex flex-col justify-center items-center gap-3 px-2'>
           <h1 className='text-3xl pb-2 font-semibold text-gray-300 lg:text-4xl'>
             {title}
           </h1>
-          <p className='text-gray-400 w-[700px]'>{text}</p>
+          <p className='text-gray-400 lg:w-[700px]'>{text}</p>
           
           <Link
             to='/add-job'
