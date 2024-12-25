@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       {
         path: '/myItems',
         element: <PrivateRoute><MyItems /></PrivateRoute>,
-        loader: () => fetch(`${import.meta.env.VITE_SERVER_URL}/allItems`)
+        
       },
       {
         path: '/updateItem/:id',
