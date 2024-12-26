@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { easeOut, motion } from 'framer-motion';
 
 const ItemCard = ({ item }) => {
     const {_id,title,type,category,date,image,description,displayName,userEmail} = item || {}
@@ -7,7 +8,9 @@ const ItemCard = ({ item }) => {
         <div>
             <div className="card bg-purple-300 dark:bg-gray-700 dark:text-white border-2 dark:border-purple-400 shadow-lg">
                 <figure className="p-4">
-                    <img
+                    <motion.img
+                        animate={{y: [0, 10, 0]}}
+                        transition={{ duration: 7,repeat: Infinity }}
                         src={item?.image}
                         alt="Shoes"
                         className="rounded-xl h-[300px] w-full object-cover dark:bg-purple-400" />

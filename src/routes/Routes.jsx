@@ -32,6 +32,7 @@ const router = createBrowserRouter([
       {
         path: '/recoverItems',
         element: <PrivateRoute><RecoverItems /></PrivateRoute>,
+        loader: () => fetch(`${import.meta.env.VITE_SERVER_URL}/allItems`)
       },
       {
         path: '/myItems',

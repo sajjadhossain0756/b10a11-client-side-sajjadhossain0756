@@ -33,7 +33,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className='flex-none'>
-        <ul className='menu menu-horizontal px-1 items-center'>
+        <ul className='menu menu-horizontal px-1 items-center font-bold'>
           
           <li className='hidden lg:block'>
             <Link to='/'>Home</Link>
@@ -77,6 +77,11 @@ const Navbar = () => {
               tabIndex={0}
               className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
             >
+              <li>
+                <Link to='/' className='justify-between'>
+                  Home
+                </Link>
+              </li>
               <li>
                 <Link to='/addItem' className='justify-between'>
                   Add Items

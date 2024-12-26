@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom'
+import { easeOut, motion } from 'framer-motion';
 
 const Slide = ({ image, text,title }) => {
   return (
@@ -12,9 +13,12 @@ const Slide = ({ image, text,title }) => {
     >
       <div className='flex items-center justify-center w-full h-full bg-gray-900/80 rounded'>
         <div className='text-center flex flex-col justify-center items-center gap-3 px-2'>
-          <h1 className='text-3xl pb-2 font-semibold text-gray-300 lg:text-4xl'>
+          <motion.h1 
+          animate={{color:['#ecff33','#00FF00']}}
+          transition={{duration:3, repeat: Infinity}}
+          className='text-3xl pb-2 font-semibold text-gray-300 lg:text-4xl'>
             {title}
-          </h1>
+          </motion.h1>
           <p className='text-gray-400 lg:w-[700px]'>{text}</p>
           
           <Link

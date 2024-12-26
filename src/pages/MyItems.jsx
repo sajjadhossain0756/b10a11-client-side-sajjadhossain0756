@@ -86,6 +86,7 @@ const MyItems = () => {
               <th>Image</th>
               <th>Title</th>
               <th>Description</th>
+              <th>Status</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -94,7 +95,8 @@ const MyItems = () => {
 
               <td><img src={data?.image} className='w-20 h-20 object-cover rounded' alt="productImage" /></td>
               <td className='font-bold'>{data.title}</td>
-              <td>{data.description.substring(0, 80)}.....</td>
+              <td>{data.description.substring(0, 30)}.....</td>
+              <td>{data?.status}</td>
               <td>
                 <button onClick={() => { handleDelete(data._id) }} className='btn'><MdDelete className='text-xl'></MdDelete></button>
                 <Link to={`/updateItem/${data._id}`}><button className='btn mx-2'><FiEdit className='text-xl'></FiEdit></button></Link>
@@ -117,12 +119,9 @@ const MyItems = () => {
           <div className="p-4 space-y-2">
             <h2 className="card-title">{data?.title}</h2>
             <p><span className='font-bold'>Description:</span> {data?.description.substring(0, 100)}.....</p>
-            <p><span className='font-bold'>Amount:</span> {data?.amount}$</p>
+            <p><span className='font-bold'>Status:</span> {data?.status}</p>
             <p><span className='font-bold'>User:</span> {data?.userEmail}</p>
             <div className="card-actions pt-4">
-              <Link to={`/detail-campaign/${data._id}`}>
-                <button className="btn rounded-full w-[150px] bg-purple-400 dark:bg-gray-500 text-white">See More</button>
-              </Link>
               <div>
                 <button onClick={() => { handleDelete(data._id) }} className='btn'><MdDelete className='text-xl'></MdDelete></button>
                 <Link to={`/update-campaign/${data._id}`}><button className='btn mx-2'><FiEdit className='text-xl'></FiEdit></button></Link>

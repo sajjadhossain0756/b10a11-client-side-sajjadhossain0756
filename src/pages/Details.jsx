@@ -9,10 +9,23 @@ import toast from 'react-hot-toast'
 const Details = () => {
     const { user } = useContext(AuthContext)
     const loderData = useLoaderData()
-    const { _id, title, type, category, date, image, description, displayName, userEmail } = loderData || {}
+    const { _id, title,status, type, category, date, image, description, displayName, userEmail } = loderData || {}
     const [startDate, setStartDate] = useState(new Date())
 
-    const handleRecoverItems = (e) => {
+    const handleRecoverItems = (e,id,prevStatus,curStatus) => {
+        // console.log(id,prevStatus,curStatus,loderData?.status);
+        
+        if(prevStatus === curStatus || prevStatus === "recovered"){
+            return console.log('data not alowed')
+        }
+        try{
+           axios.patch(`${import.meta.env.VITE_SERVER_URL}/allItems/${id}`,{curStatus})
+           .then(res =>{
+              console.log(res.data)
+           })
+        }catch(err){
+            console.log(err)
+        }
         e.preventDefault()
         const formData = new FormData(e.target);
         const initialData = Object.fromEntries(formData.entries());
@@ -62,7 +75,7 @@ const Details = () => {
                             : (<button className="btn bg-green-300 hover:bg-orange-300 mt-6" onClick={() => document.getElementById('my_modal_5').showModal()}>This is Mine!</button>)}
                         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                             <div className="modal-box bg-gray-500">
-                                <form onSubmit={handleRecoverItems}>
+                                <form onSubmit={(e)=>handleRecoverItems(e,_id, status,"recovered")}>
                                     <div className='flex gap-3 flex-col'>
                                         <label htmlFor="location" className='font-bold'>Recover Location</label>
                                         <input type="text" name='location' placeholder="Type here" className="input input-bordered w-full" />
