@@ -92,7 +92,7 @@ const MyItems = () => {
           <tbody>
             {items && items.map((data, indx) => <tr key={data._id}>
 
-              <td><img src={data.image} className='w-20 h-20 object-cover rounded' alt="productImage" /></td>
+              <td><img src={data?.image} className='w-20 h-20 object-cover rounded' alt="productImage" /></td>
               <td className='font-bold'>{data.title}</td>
               <td>{data.description.substring(0, 80)}.....</td>
               <td>

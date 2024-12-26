@@ -8,7 +8,7 @@ const ItemCard = ({ item }) => {
             <div className="card bg-purple-300 dark:bg-gray-700 dark:text-white border-2 dark:border-purple-400 shadow-lg">
                 <figure className="p-4">
                     <img
-                        src={image}
+                        src={item?.image}
                         alt="Shoes"
                         className="rounded-xl h-[300px] w-full object-cover dark:bg-purple-400" />
                 </figure>
