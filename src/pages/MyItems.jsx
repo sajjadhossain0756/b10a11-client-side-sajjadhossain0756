@@ -17,17 +17,6 @@ const MyItems = () => {
 
   useEffect(() => {
 
-    // try {
-    //   axios.get(`${import.meta.env.VITE_SERVER_URL}/allItems/myItems/${user?.email}`,{withCredentials: true})
-    //     .then(res => {
-    //       console.log(res.data)
-    //       setItems(res.data)
-    //     })
-    // } catch (err) {
-    //   Swal.fire('Error', err.message)
-
-    // }
-
     try{
        axiosSecure.get(`/allItems/myItems/${user?.email}`)
        .then(res =>{

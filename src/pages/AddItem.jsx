@@ -6,10 +6,14 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import useAxiosSecure from '../hooks/useAxiosSecure'
 
 const AddItem = () => {
   const { user } = useContext(AuthContext)
   const [startDate, setStartDate] = useState(new Date())
+
+  const axiosSecure = useAxiosSecure()
+
   const handleAddItem = (e) => {
     e.preventDefault()
     const formData = new FormData(e.target);
@@ -18,7 +22,7 @@ const AddItem = () => {
     initialData.status = "pending";
   
     try{
-       axios.post(`${import.meta.env.VITE_SERVER_URL}/allItems`,initialData)
+       axiosSecure.post(`/allItems`,initialData)
        .then(res =>{
          console.log(res.data)
          e.target.reset()

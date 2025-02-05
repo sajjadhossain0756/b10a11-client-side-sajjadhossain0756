@@ -1,7 +1,7 @@
 
-   ------------------   Welcome to Lost And Found Project  ------------------------------
+     ------------------   Welcome to Lost And Found Project  ------------------------------
 
-#############   Project Name: Lost And Found Project  ################
+          #############   Project Name: Lost And Found Project  ################
 
      ----------------------------------Purpose Of Project--------------------------- 
 
@@ -16,6 +16,7 @@ We can Search or Add our lost or found items information in this website.The pur
 ## you can delete your add items
 ## you can see which items are you add
 ## you can see your add items details
+## you can see your all add items 
 ## you can see your recover items
 
     --------------------------- Used NPM Pakage Name in this Project ----------------------

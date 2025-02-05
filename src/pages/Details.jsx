@@ -70,7 +70,7 @@ const Details = () => {
                     </div>
                     {/*  <button className="btn bg-green-300 hover:bg-orange-300 mt-6">Get Started</button> */}
                     <div>
-                        {/* Open the modal using document.getElementById('ID').showModal() method */}
+                        {/* Open the modal u]sing document.getElementById('ID').showModal() method */}
                         {type === 'Lost' ? (<button className="btn bg-green-300 hover:bg-orange-300 mt-6" onClick={() => document.getElementById('my_modal_5').showModal()}>Found This!</button>)
                             : (<button className="btn bg-green-300 hover:bg-orange-300 mt-6" onClick={() => document.getElementById('my_modal_5').showModal()}>This is Mine!</button>)}
                         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">

@@ -10,7 +10,7 @@ const RecoverItems = () => {
     setItems(filterData)
   }, [])
   return (
-    <div className='mx-10'>
+    <div className='mx-5 lg:mx-10'>
       <p>RecoverItems: {items.length}</p>
       <div className="overflow-x-auto hidden lg:block dark:text-white py-8">
         <table className="table">
