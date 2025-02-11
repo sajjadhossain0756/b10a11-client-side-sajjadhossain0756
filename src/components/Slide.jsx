@@ -11,8 +11,8 @@ const Slide = ({ image, text,title }) => {
         borderRadius: '4px'
       }}
     >
-      <div className='flex items-center justify-center w-full h-full bg-gray-900/80 rounded'>
-        <div className='text-center flex flex-col justify-center items-center gap-3 px-2'>
+      <div className='flex items-center justify-center w-full h-full bg-gray-900/80'>
+        <div className='text-center flex flex-col justify-center items-center gap-3 px-8 lg:px-2 '>
           <motion.h1 
           animate={{color:['#ecff33','#00FF00']}}
           transition={{duration:3, repeat: Infinity}}
