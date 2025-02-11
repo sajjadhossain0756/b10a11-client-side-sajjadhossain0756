@@ -6,7 +6,9 @@ import AboutUs from '../components/AboutUs'
 const Home = () => {
   return (
     <div>
-      <Helmet><title>Lost & Found/Home Page</title></Helmet>
+      <Helmet>
+        <title>Lost & Found | Home Page</title>
+      </Helmet>
       <Carousel />
       <DisplayItems></DisplayItems>
       <AboutUs></AboutUs>

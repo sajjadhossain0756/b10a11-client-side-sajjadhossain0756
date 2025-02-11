@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../providers/AuthProvider'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-import axios from 'axios'
 import toast from 'react-hot-toast'
 import useAxiosSecure from '../hooks/useAxiosSecure'
+import { Helmet } from 'react-helmet'
 
 const AddItem = () => {
   const { user } = useContext(AuthContext)
@@ -20,24 +20,27 @@ const AddItem = () => {
     const initialData = Object.fromEntries(formData.entries());
     console.log(initialData)
     initialData.status = "pending";
-  
-    try{
-       axiosSecure.post(`/allItems`,initialData)
-       .then(res =>{
-         console.log(res.data)
-         e.target.reset()
-         if(res.data.insertedId){
+
+    try {
+      axiosSecure.post(`/allItems`, initialData)
+        .then(res => {
+          console.log(res.data)
+          e.target.reset()
+          if (res.data.insertedId) {
             toast.success('Data Successfully Added..')
-         }
-       })
-    }catch(err){
-        console.log('Error',err.message)
-        toast.error('Error',err.message)
+          }
+        })
+    } catch (err) {
+      console.log('Error', err.message)
+      toast.error('Error', err.message)
     }
 
   }
   return (
     <div className='w-11/12 mx-auto lg:py-10'>
+      <Helmet>
+        <title>Lost & Found | AddItems Page</title>
+      </Helmet>
       <Link to='/'><button className='dark:text-white font-bold text-2xl py-4 flex items-center gap-2'><span><FaArrowLeftLong></FaArrowLeftLong></span> <span>Back To Home</span></button></Link>
       <div className='bg-purple-300 p-10 rounded dark:bg-gray-800 dark:text-white mb-10'>
         <div className='text-center mb-6'>

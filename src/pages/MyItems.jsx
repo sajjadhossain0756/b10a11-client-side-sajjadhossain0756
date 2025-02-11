@@ -2,11 +2,12 @@ import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import { AuthContext } from '../providers/AuthProvider'
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { MdDelete } from 'react-icons/md'
 import { FiEdit } from 'react-icons/fi'
 import { FaEye } from 'react-icons/fa6'
 import useAxiosSecure from '../hooks/useAxiosSecure'
+import { Helmet } from 'react-helmet'
 
 
 const MyItems = () => {
@@ -17,13 +18,13 @@ const MyItems = () => {
 
   useEffect(() => {
 
-    try{
-       axiosSecure.get(`/allItems/myItems/${user?.email}`)
-       .then(res =>{
+    try {
+      axiosSecure.get(`/allItems/myItems/${user?.email}`)
+        .then(res => {
           setItems(res.data)
-       })
-    }catch(err){
-        Swal.fire("Error",err.message)
+        })
+    } catch (err) {
+      Swal.fire("Error", err.message)
     }
 
 
@@ -66,6 +67,9 @@ const MyItems = () => {
 
   return (
     <div className='mx-10'>
+      <Helmet>
+        <title>Lost & Found | MyItems Page</title>
+      </Helmet>
       <div className="overflow-x-auto hidden lg:block dark:text-white py-8">
         <table className="table">
           {/* head */}

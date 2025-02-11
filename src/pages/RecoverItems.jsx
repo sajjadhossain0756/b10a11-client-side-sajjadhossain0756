@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet'
 import { Link, useLoaderData } from 'react-router-dom'
 
 const RecoverItems = () => {
@@ -11,6 +12,9 @@ const RecoverItems = () => {
   }, [])
   return (
     <div className='mx-5 lg:mx-10'>
+      <Helmet>
+        <title>Lost & Found | RecoverItems Page</title>
+      </Helmet>
       <p>RecoverItems: {items.length}</p>
       <div className="overflow-x-auto hidden lg:block dark:text-white py-8">
         <table className="table">

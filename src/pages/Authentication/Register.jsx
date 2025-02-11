@@ -69,7 +69,7 @@ const Registration = () => {
 
   return (
     <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
-      <Helmet><title>Lost & Found/Sign Up Page</title></Helmet>
+      <Helmet><title>Lost & Found | Sign Up Page</title></Helmet>
       <div className='flex w-full items-center max-w-sm mx-auto overflow-hidden
        bg-gray-100 border-2 dark:border-purple-300 dark:bg-gray-700  rounded-lg shadow-lg  lg:max-w-4xl '>
         <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>

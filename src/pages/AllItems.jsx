@@ -2,10 +2,11 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import ItemCard from '../components/ItemCard'
 import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet'
 
 const AllItems = () => {
   const [items, setItems] = useState([])
-  const [search,setSearch] = useState('');
+  const [search, setSearch] = useState('');
 
   console.log(search)
   console.log(items)
@@ -23,11 +24,14 @@ const AllItems = () => {
   }, [search])
   return (
     <div className='m-10'>
+      <Helmet>
+        <title>Lost & Found | AllItems Page</title>
+      </Helmet>
       <form className='text-center'>
         <input
           type="text"
           placeholder="Search By Title Name"
-          onChange={e => {setSearch(e.target.value)}}
+          onChange={e => { setSearch(e.target.value) }}
           className="input input-bordered input-primary w-full max-w-xs" />
       </form>
       <h2 className='font-bold text-4xl p-3 dark:text-white'>Total Items: {items.length}</h2>
