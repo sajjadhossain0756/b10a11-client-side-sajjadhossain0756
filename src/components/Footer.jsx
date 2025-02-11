@@ -9,7 +9,7 @@ const Footer = () => {
                <img className='ml-2' src={logo} alt="" />
            </figure>
            <h2 className='text-3xl font-bold text-gray-300 pb-2'>Lost & Found</h2>
-           <p className='w-[400px] text-gray-400'>Your trusted platform for recovering what’s lost and sharing 
+           <p className='lg:w-[400px] text-gray-400'>Your trusted platform for recovering what’s lost and sharing 
             what’s found.Whether you’ve lost something precious or found something unexpected, we’re here to help.</p>
         </nav>
         <nav >

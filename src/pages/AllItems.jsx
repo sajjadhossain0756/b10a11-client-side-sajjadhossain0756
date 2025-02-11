@@ -12,7 +12,7 @@ const AllItems = () => {
   console.log(items)
   useEffect(() => {
     try {
-      axios.get(`http://localhost:3000/allItems?search=${search}`)
+      axios.get(`${import.meta.env.VITE_SERVER_URL}/allItems?search=${search}`)
         .then(res => {
           console.log(res.data)
           setItems(res.data)
