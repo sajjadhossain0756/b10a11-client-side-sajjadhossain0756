@@ -22,7 +22,7 @@ const Slide = ({ image, text,title }) => {
           <p className='text-gray-400 lg:w-[700px]'>{text}</p>
           
           <Link
-            to='/add-job'
+            to='/allItems'
             className='w-[150px] px-5 py-4 text-sm font-medium text-white capitalize transition-colors 
             duration-300 transform bg-gray-600 rounded-md hover:bg-gray-500 focus:outline-none focus:bg-gray-500'
           >
