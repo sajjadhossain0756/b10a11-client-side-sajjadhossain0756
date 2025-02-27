@@ -3,6 +3,7 @@ import Carousel from '../components/Carousel'
 import DisplayItems from '../components/DisplayItems'
 import AboutUs from '../components/AboutUs'
 import ClientReview from '../components/ClientReview'
+import NewsLetter from '../components/NewsLetter'
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <DisplayItems></DisplayItems>
       <AboutUs></AboutUs>
       <ClientReview></ClientReview>
+      <NewsLetter></NewsLetter>
     </div>
   )
 }
