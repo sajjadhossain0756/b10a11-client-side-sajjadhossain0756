@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet'
 import Carousel from '../components/Carousel'
 import DisplayItems from '../components/DisplayItems'
 import AboutUs from '../components/AboutUs'
+import ClientReview from '../components/ClientReview'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Carousel />
       <DisplayItems></DisplayItems>
       <AboutUs></AboutUs>
+      <ClientReview></ClientReview>
     </div>
   )
 }
